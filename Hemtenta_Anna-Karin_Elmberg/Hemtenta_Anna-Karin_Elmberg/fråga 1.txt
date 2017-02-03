@@ -1,0 +1,12 @@
+﻿Jag tolkar "Red, Green, Refactor" och har använt det på följande sätt:
+Först skriver man ett testfall utifrån de förutsättningar man vet att programmet är tänkt att fungera -
+metoder, parameter, attribut osv som t ex finns i ett Interface. Viktigt att testa en sak i taget, t ex
+ogiltiga värden på parameter. Köra testet som då ska visa rött(Red) då själva implementationen inte är gjord.
+
+Efter det implementerar man koden (logiken) för det man testar så att testet går igenom, blir grönt(Green).
+I detta steg skriver man minsta möjliga kod, just bara så man uppnår grön status.
+
+För att sen i refactor-steget titta på hur man kan optimera sin kod.
+
+Denna process upprepas och fungerar som minnesregel genom testfallets och implementationens utveckling.
+
