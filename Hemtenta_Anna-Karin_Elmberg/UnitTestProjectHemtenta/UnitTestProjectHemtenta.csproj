@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="AccountTest.cs" />
     <Compile Include="BlogTest.cs" />
+    <Compile Include="MusicPlayerTest.cs" />
+    <Compile Include="WebshopTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

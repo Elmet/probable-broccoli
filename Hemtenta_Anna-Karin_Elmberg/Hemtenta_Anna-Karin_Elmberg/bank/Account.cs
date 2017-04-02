@@ -8,23 +8,60 @@ namespace HemtentaTdd2017
 {
     public class Account : IAccount
     {
-        public double Amount { get; set; }
+        double balance;
+
+        public double Amount
+        {
+            get
+            {
+                return balance;
+            } 
+        }
 
         public void Deposit(double amount)
         {
             if (amount <= 0 || double.IsNaN(amount) || double.IsNegativeInfinity(amount) || double.IsPositiveInfinity(amount) || amount.Equals(double.MinValue))
+            { 
                 throw new IllegalAmountException();
-            Amount += amount;
+            }
+
+            balance += amount;
         }
 
         public void TransferFunds(IAccount destination, double amount)
         {
-            throw new NotImplementedException();
+            if (destination == null)
+            {
+                throw new OperationNotPermittedException();
+            }
+
+            if (amount <= 0 || double.IsNaN(amount) || double.IsNegativeInfinity(amount) || double.IsPositiveInfinity(amount) || amount.Equals(double.MinValue))
+            {
+                throw new IllegalAmountException();
+            }
+
+            if (amount > balance)
+            {
+                throw new InsufficientFundsException();
+            }
+
+            Withdraw(amount);
+            destination.Deposit(amount);
         }
 
         public void Withdraw(double amount)
         {
-            throw new NotImplementedException();
+            if (amount <= 0 || double.IsNaN(amount) || double.IsNegativeInfinity(amount) || double.IsPositiveInfinity(amount) || amount.Equals(double.MinValue))
+            {
+                throw new IllegalAmountException();
+            }
+
+            if (amount > balance)
+            {
+                throw new InsufficientFundsException();
+            }
+
+            balance -= amount;
         }
     }
 }

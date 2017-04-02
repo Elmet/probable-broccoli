@@ -26,9 +26,9 @@ namespace HemtentaTdd2017
 
     
 
-    // Kastas när beloppet på kontot inte tillåter
-    // ett uttag eller en överföring
-    public class InsufficientFundsException : Exception { }
+        // Kastas när beloppet på kontot inte tillåter
+        // ett uttag eller en överföring
+        public class InsufficientFundsException : Exception { }
 
         // Kastas för ogiltiga siffror
         public class IllegalAmountException : Exception { }
